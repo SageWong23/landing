@@ -9,11 +9,16 @@
   --leftColumn-text-align-left: left;
   --leftColumn-text-align-center: center;
 
-  --fontSize-h1: 5rem;
-  --fontSize-h2: 2.5rem;
-  --fontSize-h3: 1.5rem;
-  --fontSize-h5: 1rem;
-  --fontSize-p: 1rem;
+  --fontSize-h1: clamp(2.4883rem, 1.7616rem + 3.6336vw, 4.5776rem);
+  --fontSize-h2: clamp(1.728rem, 1.31rem + 2.0899vw, 2.9297rem);
+  --fontSize-h3: clamp(1.2rem, 0.9652rem + 1.1739vw, 1.875rem);
+  --fontSize-h5: clamp(0.6944rem, 0.6021rem + 0.4618vw, 0.96rem);
+  --fontSize-p: clamp(0.6944rem, 0.6021rem + 0.4618vw, 0.96rem);
+
+  --button-size: clamp(3rem, 2.4783rem + 2.6087vw, 4.5rem);
+  --button-svg: clamp(1.5rem, 1.2391rem + 1.3043vw, 2.25rem);
+
+  --profilePicture: clamp(5rem, 4.1304rem + 4.3478vw, 7.5rem);
 }
 /* ----------------------------------------------------------
   Reset Styles
@@ -53,6 +58,7 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   column-gap: 32px;
+  align-items: center;
 }
 
 /* right column
@@ -65,6 +71,7 @@ body {
   gap: 16px;
   align-content: center;
   position: relative;
+  height: fit-content;
 }
 
 /* left column
@@ -102,8 +109,8 @@ body {
   text-shadow: 0 0 10px var(--color-font);
 }
 .top-container img {
-  height: 128px;
-  width: 128px;
+  height: var(--profilePicture);
+  width: var(--profilePicture);
   border-radius: 100px;
   border: solid 1px var(--color-border);
 }
@@ -124,8 +131,8 @@ body {
   border: solid var(--color-border) 1px;
   padding: 1em;
   border-radius: 50%;
-  height: 64px;
-  width: 64px;
+  height: var(--button-size);
+  width: var(--button-size);
   box-sizing: border-box;
   flex-shrink: 0;
   display: grid;
@@ -134,9 +141,11 @@ body {
   transition: 300ms ease-in-out;
   cursor: pointer;
   position: relative;
+  justify-content: center;
+  align-items: center;
 }
 .bottom-container div svg {
-  width: 32px;
+  width: var(--button-svg);
 }
 .bottom-container div::before {
   content: attr(data-social);
@@ -220,7 +229,7 @@ body {
   padding: 0;
   border: solid var(--color-border) 1px;
   border-radius: 40px;
-  width: 60vh;
+  width: 60vw;
   height: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: default;
@@ -232,7 +241,7 @@ body {
   padding: 0;
   border: solid var(--color-border) 1px;
   border-radius: 40px;
-  width: 60vh;
+  width: 60vw;
   height: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: default;
@@ -327,7 +336,7 @@ body {
 .aboutClose,
 .contactClose {
   position: absolute;
-  left: 60vh;
+  left: 60vw;
   top: -2rem;
   color: var(--color-font);
   transition: 150ms ease-in-out;
@@ -455,6 +464,7 @@ body {
   padding-top: 32px;
   grid-column-start: 2;
   grid-row-start: 2;
+  align-self: start;
 }
 #div1,
 #div2 {
@@ -546,14 +556,7 @@ input:checked + .slider:before {
 /* Breakpoints
 ----------------------------------------------------------
  */
-@media only screen and (max-width: 480px) {
-  :root {
-    --fontSize-h1: 2rem;
-    --fontSize-h2: 1.25rem;
-    --fontSize-h3: 0.8rem;
-    --fontSize-h5: 0.75rem;
-    --fontSize-p: 0.75rem;
-  }
+@media only screen and (max-width: 576px) {
   .wrapper {
     height: 100svh;
     width: 100svw;
@@ -585,23 +588,14 @@ input:checked + .slider:before {
     color: var(--color-font);
     text-align: var(--leftColumn-text-align-center);
   }
-  .top-container img {
-    height: 96px;
-    width: 96px;
-  }
   .bottom-container {
     padding-left: 0;
     padding-top: 2rem;
     justify-content: center;
   }
   .bottom-container div {
-    width: 32px;
-    height: 32px;
     justify-content: center;
     align-items: center;
-  }
-  .bottom-container div svg {
-    width: 16px;
   }
   .bottom-container div:hover::before {
     transform: translateY(-40px);
@@ -675,14 +669,5 @@ input:checked + .slider:before {
   }
   .formLayout div:nth-child(odd) {
     padding-top: 8px;
-  }
-}
-@media only screen and (min-width: 481px) and (max-width: 768px) {
-  :root {
-    --fontSize-h1: 2rem;
-    --fontSize-h2: 1.25rem;
-    --fontSize-h3: 0.8rem;
-    --fontSize-h5: 0.75rem;
-    --fontSize-p: 0.75rem;
   }
 }
