@@ -671,4 +671,10 @@ input:checked + .slider:before {
   .formLayout div:nth-child(odd) {
     padding-top: 8px;
   }
+  .socialPopupStyle,
+  .aboutPopupStyle,
+  .contactPopupStyle {
+    height: 100dvh;
+    width: 100dvw;
+  }
 }
