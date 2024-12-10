@@ -558,8 +558,7 @@ input:checked + .slider:before {
  */
 @media only screen and (max-width: 576px) {
   .wrapper {
-    height: 100svh;
-    width: 100svw;
+    padding: 12vh 10vw;
   }
   .wrapper-grid {
     grid-template-columns: auto;
@@ -568,29 +567,26 @@ input:checked + .slider:before {
     row-gap: 16px;
     overflow: hidden;
   }
-  .left-column {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .top-container {
     display: flex;
     flex-direction: column;
-    row-gap: 0.5rem;
+    row-gap: 0.25rem;
     padding-left: 0;
     align-items: center;
   }
   .top-container h1 {
     color: var(--color-font);
     text-align: var(--leftColumn-text-align-center);
+    margin: 0;
   }
   .top-container h3 {
     color: var(--color-font);
     text-align: var(--leftColumn-text-align-center);
+    margin: 0;
   }
   .bottom-container {
     padding-left: 0;
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     justify-content: center;
   }
   .bottom-container div {
