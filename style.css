@@ -39,7 +39,6 @@ body {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 /* wrapper and wrapper grid
 ------------------------------
@@ -567,7 +566,6 @@ input:checked + .slider:before {
     grid-template-rows: 1fr auto;
     column-gap: 0;
     row-gap: 16px;
-    overflow: hidden;
   }
   .top-container {
     display: flex;
