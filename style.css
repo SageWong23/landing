@@ -557,6 +557,10 @@ input:checked + .slider:before {
 ----------------------------------------------------------
  */
 @media only screen and (max-width: 576px) {
+  body {
+    height: 100svh;
+    width: 100svw;
+  }
   .wrapper {
     padding: 12vh 10vw;
     height: 100svh;
