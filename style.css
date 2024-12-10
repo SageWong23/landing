@@ -396,7 +396,7 @@ body {
  */
 .banner-1,
 .banner-2 {
-  display: flex;
+  display: grid;
   justify-content: end;
   align-items: end;
   background-color: #ffffff38;
@@ -411,6 +411,24 @@ body {
 .banner-1 {
   grid-row-start: 1;
   grid-row-end: -1;
+}
+.banner-1 > h3 {
+  margin: 0;
+  align-self: start;
+  justify-self: end;
+  padding-top: 1rem;
+  padding-right: 0.5rem;
+  z-index: 2;
+  color: var(--color-font);
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: var(--fontSize-h3);
+  writing-mode: vertical-lr;
+  text-shadow: 0 0 10px #000000;
+}
+.banner-1 > img,
+.banner-1 > h3 {
+  grid-area: 1/1;
 }
 .banner-1 img,
 .banner-2 img {
